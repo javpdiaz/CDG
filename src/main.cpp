@@ -44,9 +44,13 @@ void setup() {
   pinMode(juez1_botton_izq, INPUT);
   pinMode(juez1_botton_der, INPUT);
   pinMode(juez2_botton_izq, INPUT);
+  pinMode(juez2_botton_der, INPUT);
+  pinMode(juez3_botton_izq, INPUT);
+  pinMode(juez3_botton_der, INPUT);
   
   
-  tft.begin();
+  
+  /* tft.begin();
 
   tft.setCursor(26, 120);
   tft.setTextColor(ILI9341_RED);
@@ -56,7 +60,7 @@ void setup() {
   tft.setCursor(20, 160);
   tft.setTextColor(ILI9341_GREEN);
   tft.setTextSize(2);
-  tft.println("I can has colors?");
+  tft.println("I can has colors?"); */
 }
 
 void loop() { }
