@@ -57,6 +57,8 @@ Bounce bounce_juez2_botton_der = Bounce();
 Bounce bounce_juez3_botton_izq = Bounce();
 Bounce bounce_juez3_botton_der = Bounce();
 
+Bounce bounce_reset_button = Bounce();
+
 void setup() {
   
   //Declaracion de funcionalidad de pines
@@ -84,8 +86,8 @@ void setup() {
   bounce_juez3_botton_izq.attach(juez3_botton_izq, INPUT);
   bounce_juez3_botton_der.interval(30);
 
-  bounce_juez2_botton_izq.attach(juez2_botton_izq, INPUT);
-  bounce_juez2_botton_der.interval(30);
+  bounce_reset_button.attach(juez2_botton_izq, INPUT);
+  bounce_reset_button.interval(30);
 
   /* tft.begin();
 
@@ -102,14 +104,61 @@ void setup() {
 
 void loop() { 
 
-  if(digitalRead(juez1_botton_izq) == 1){
-    while (digitalRead(juez1_botton_izq) == 1)
-    {
-      delay(10);
-    }
+  //actualiza la instancia Bounce en cada loop
+  bounce_juez1_botton_izq.update();
+  bounce_juez1_botton_der.update();
+  bounce_juez2_botton_izq.update();
+  bounce_juez2_botton_der.update();
+  bounce_juez3_botton_izq.update();
+  bounce_juez3_botton_der.update();
 
-    BI_Cont ++;
+  bounce_reset_button.update();
+
+  //si hay un cambio de estado de bajo a alto se cumple pa condicion del if
+  if (bounce_juez1_botton_izq.rose())
+  {
     
   }
+
+  if (bounce_juez1_botton_der.rose())
+  {
+    
+  }
+
+  if (bounce_juez2_botton_izq.rose())
+  {
+    
+  }
+
+  if (bounce_juez2_botton_der.rose())
+  {
+    
+  }
+
+  if (bounce_juez3_botton_izq.rose())
+  {
+    
+  }
+
+  if (bounce_juez3_botton_der.rose())
+  {
+    
+  }
+
+  if (bounce_reset_button.rose())
+  {
+    
+  }
+  
+
+  // if(digitalRead(juez1_botton_izq) == 1){
+  //   while (digitalRead(juez1_botton_izq) == 1)
+  //   {
+  //     delay(10);
+  //   }
+
+  //   BI_Cont ++;
+    
+  // }
 
 }
