@@ -29,7 +29,23 @@
 #define TFT_SCK 5
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCK, TFT_RST, -1);
 
+#define juez1_botton_izq 26
+#define juez1_botton_der 25
+#define juez2_botton_izq 14
+#define juez2_botton_der 27
+#define juez3_botton_izq 13
+#define juez3_botton_der 12
+
+#define reset_button 33
+
+
 void setup() {
+  
+  pinMode(juez1_botton_izq, INPUT);
+  pinMode(juez1_botton_der, INPUT);
+  pinMode(juez2_botton_izq, INPUT);
+  
+  
   tft.begin();
 
   tft.setCursor(26, 120);
