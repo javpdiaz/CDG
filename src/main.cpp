@@ -89,6 +89,18 @@ void setup() {
   bounce_reset_button.attach(juez2_botton_izq, INPUT);
   bounce_reset_button.interval(30);
 
+  //inicio de la configuracion de pantalla
+  tft.begin();
+  tft.setRotation(1);
+  //tft.drawRect(0, 0, 106, 120, ILI9341_BLUE);
+  tft.fillRect(0, 0, 106, 120, ILI9341_BLUE);
+  tft.fillRect(106, 0, 107, 120, ILI9341_RED);
+  tft.fillRect(213, 0, 107, 120, ILI9341_BLUE);
+  tft.fillRect(0, 120, 106, 120, ILI9341_RED);
+  tft.fillRect(106, 120, 107, 120, ILI9341_BLUE);
+  tft.fillRect(213, 120, 107, 120, ILI9341_RED);
+
+
   /* tft.begin();
 
   tft.setCursor(26, 120);
