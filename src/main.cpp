@@ -92,7 +92,7 @@ void setup() {
   //inicio de la configuracion de pantalla
   tft.begin();
   tft.setRotation(1);
-  //tft.drawRect(0, 0, 106, 120, ILI9341_BLUE);
+  
   tft.fillRect(0, 0, 106, 120, ILI9341_BLUE);
   tft.fillRect(106, 0, 107, 120, ILI9341_RED);
   tft.fillRect(213, 0, 107, 120, ILI9341_BLUE);
@@ -100,18 +100,42 @@ void setup() {
   tft.fillRect(106, 120, 107, 120, ILI9341_BLUE);
   tft.fillRect(213, 120, 107, 120, ILI9341_RED);
 
+  //Cuadro izquierda arriba
+  tft.setCursor(5, 5);
+  tft.setTextSize(4);
+  tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
+  tft.print("GAr");
 
-  /* tft.begin();
+  //cuadro izquierda abajo
+  tft.setCursor(5, 125);
+  tft.setTextSize(4);
+  tft.setTextColor(ILI9341_YELLOW, ILI9341_RED);
+  tft.print("GAb");
 
-  tft.setCursor(26, 120);
-  tft.setTextColor(ILI9341_RED);
-  tft.setTextSize(3);
-  tft.println("Hello, TFT!");
+  //Cuadro centro arriba
+  tft.setCursor(111, 5);
+  tft.setTextSize(4);
+  tft.setTextColor(ILI9341_YELLOW, ILI9341_RED);
+  tft.print("BI");
 
-  tft.setCursor(20, 160);
-  tft.setTextColor(ILI9341_GREEN);
-  tft.setTextSize(2);
-  tft.println("I can has colors?"); */
+  //cuadro centro abajo
+  tft.setCursor(111, 125);
+  tft.setTextSize(4);
+  tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
+  tft.print("BD");
+
+  //Cuadro derecha arriba
+  tft.setCursor(218, 5);
+  tft.setTextSize(4);
+  tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
+  tft.print("CI");
+
+  //cuadro derecha abajo
+  tft.setCursor(218, 125);
+  tft.setTextSize(4);
+  tft.setTextColor(ILI9341_YELLOW, ILI9341_RED);
+  tft.print("CD");
+  
 }
 
 void loop() { 
@@ -129,48 +153,78 @@ void loop() {
   //si hay un cambio de estado de bajo a alto se cumple pa condicion del if
   if (bounce_juez1_botton_izq.rose())
   {
-    
+    GAr_Cont++;
   }
 
   if (bounce_juez1_botton_der.rose())
   {
-    
+    GAb_Count++;
   }
 
   if (bounce_juez2_botton_izq.rose())
   {
-    
+    BI_Cont++;
   }
 
   if (bounce_juez2_botton_der.rose())
   {
-    
+    BD_Cont++;
   }
 
   if (bounce_juez3_botton_izq.rose())
   {
-    
+    CI_Cont++;
   }
 
   if (bounce_juez3_botton_der.rose())
   {
-    
+    CD_Cont++;
   }
 
   if (bounce_reset_button.rose())
   {
-    
+    BI_Cont = 0;
+    GAr_Cont = 0;
+    BD_Cont = 0;
+    CD_Cont = 0;
+    CI_Cont = 0;
+    GAb_Count = 0;
   }
-  
 
-  // if(digitalRead(juez1_botton_izq) == 1){
-  //   while (digitalRead(juez1_botton_izq) == 1)
-  //   {
-  //     delay(10);
-  //   }
+  //cuadrado izquierda arriba
+  tft.setCursor(10, 60);
+  tft.setTextSize(5);
+  tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
+  tft.print("100");
 
-  //   BI_Cont ++;
-    
-  // }
+  //cuadro izquierda abajo
+  tft.setCursor(10, 180);
+  tft.setTextSize(5);
+  tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
+  tft.print("805");
+
+  //Cuadro centro arriba
+  tft.setCursor(116, 60);
+  tft.setTextSize(5);
+  tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
+  tft.print("458");
+
+  //cuadro centro abajo
+  tft.setCursor(116, 180);
+  tft.setTextSize(5);
+  tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
+  tft.print("123");
+
+  //Cuadro derecha arriba
+  tft.setCursor(223, 60);
+  tft.setTextSize(5);
+  tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
+  tft.print("254");
+
+  //cuadro derecha abajo
+  tft.setCursor(223, 180);
+  tft.setTextSize(5);
+  tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
+  tft.print("321");
 
 }
