@@ -83,10 +83,10 @@ void setup() {
   bounce_juez2_botton_der.interval(30);
   bounce_juez3_botton_izq.attach(juez3_botton_izq, INPUT);
   bounce_juez3_botton_izq.interval(30);
-  bounce_juez3_botton_izq.attach(juez3_botton_izq, INPUT);
+  bounce_juez3_botton_der.attach(juez3_botton_der, INPUT);
   bounce_juez3_botton_der.interval(30);
 
-  bounce_reset_button.attach(juez2_botton_izq, INPUT);
+  bounce_reset_button.attach(reset_button, INPUT);
   bounce_reset_button.interval(30);
 
   //inicio de la configuracion de pantalla
@@ -195,36 +195,36 @@ void loop() {
   tft.setCursor(10, 60);
   tft.setTextSize(5);
   tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
-  tft.print("100");
+  tft.print(GAr_Cont);
 
   //cuadro izquierda abajo
   tft.setCursor(10, 180);
   tft.setTextSize(5);
   tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
-  tft.print("805");
+  tft.print(GAb_Count);
 
   //Cuadro centro arriba
   tft.setCursor(116, 60);
   tft.setTextSize(5);
   tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
-  tft.print("458");
+  tft.print(BI_Cont);
 
   //cuadro centro abajo
   tft.setCursor(116, 180);
   tft.setTextSize(5);
   tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
-  tft.print("123");
+  tft.print(BD_Cont);
 
   //Cuadro derecha arriba
   tft.setCursor(223, 60);
   tft.setTextSize(5);
   tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
-  tft.print("254");
+  tft.print(CI_Cont);
 
   //cuadro derecha abajo
   tft.setCursor(223, 180);
   tft.setTextSize(5);
   tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
-  tft.print("321");
+  tft.print(CD_Cont);
 
 }

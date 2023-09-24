@@ -71,7 +71,60 @@
     { "type": "wokwi-vcc", "id": "vcc1", "top": -269.61, "left": -871.18, "attrs": {} },
     { "type": "wokwi-vcc", "id": "vcc2", "top": -15.1, "left": -868.53, "attrs": {} },
     { "type": "wokwi-vcc", "id": "vcc3", "top": 219.19, "left": -865.4, "attrs": {} },
-    { "type": "wokwi-vcc", "id": "vcc4", "top": -431.9, "left": -400.64, "attrs": {} }
+    { "type": "wokwi-vcc", "id": "vcc4", "top": -431.9, "left": -400.64, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -60.46,
+      "left": -744.77,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -39.98,
+      "left": -631.78,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -24.35, "left": -673.71, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 147.11,
+      "left": -739.47,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 168.87,
+      "left": -632.87,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 184.5, "left": -666.09, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 383.29,
+      "left": -730.82,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 403.34,
+      "left": -625.41,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 409.99, "left": -662.29, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": -215.92,
+      "left": -308.92,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd4", "top": -189.15, "left": -219.58, "attrs": {} }
   ],
   "connections": [
     [ "esp:TX0", "$serialMonitor:RX", "", [] ],
@@ -89,14 +142,28 @@
     [ "btn1:2.l", "btn2:2.l", "green", [ "v-25.84", "h202.46" ] ],
     [ "vcc3:VCC", "btn6:2.l", "red", [ "v31.85", "h77.11" ] ],
     [ "btn6:2.l", "btn5:2.l", "green", [ "v-22.99", "h209.41" ] ],
-    [ "btn1:2.r", "esp:D14", "green", [ "v93.19", "h660.83", "v-132.16" ] ],
-    [ "btn2:2.r", "esp:D27", "green", [ "v74.81", "h437.62", "v-124.61" ] ],
-    [ "btn6:2.r", "esp:D13", "green", [ "v79.16", "h715.43", "v-333.55" ] ],
-    [ "btn5:2.r", "esp:D12", "green", [ "v56.69", "h476.23", "v-317.19" ] ],
-    [ "btn3:2.r", "esp:D26", "green", [ "v86.95", "h647.85", "v62.93" ] ],
-    [ "btn4:2.r", "esp:D25", "green", [ "v72.46", "h468.55", "v67.97" ] ],
     [ "vcc4:VCC", "btn7:2.l", "red", [ "v0" ] ],
-    [ "btn7:2.r", "esp:D33", "green", [ "v244.6", "h299.7", "v60.45", "h55.02" ] ]
+    [ "esp:D13", "btn6:1.r", "green", [ "h-29.09", "v369.81", "h-684.99" ] ],
+    [ "esp:D12", "btn5:1.r", "green", [ "h-54.83", "v338.62", "h-453.3" ] ],
+    [ "btn1:1.r", "esp:D14", "green", [ "v112.11", "h644.83", "v-176.84" ] ],
+    [ "esp:D27", "btn2:1.r", "green", [ "h-91.77", "v158.99", "h-416.37" ] ],
+    [ "btn4:1.r", "esp:D25", "green", [ "v88.08", "h444.15", "v18.17" ] ],
+    [ "btn3:1.r", "esp:D26", "green", [ "v108.66", "h623.6", "v11.76" ] ],
+    [ "btn7:1.r", "esp:D33", "green", [ "v265.8", "h271", "v30.99" ] ],
+    [ "r1:1", "btn3:1.r", "green", [ "v0" ] ],
+    [ "r2:2", "btn4:1.r", "green", [ "v0" ] ],
+    [ "r2:1", "gnd1:GND", "green", [ "v-7.3", "h-25.94" ] ],
+    [ "r1:2", "gnd1:GND", "green", [ "v1.22", "h22.81", "v22.84" ] ],
+    [ "r4:2", "btn2:1.r", "green", [ "v0.31", "h14.24" ] ],
+    [ "r3:1", "btn1:1.r", "green", [ "v-0.77", "h-10.71" ] ],
+    [ "r4:1", "gnd2:GND", "green", [ "v-4.04", "h-20.5" ] ],
+    [ "r3:2", "gnd2:GND", "green", [ "v0.32", "h14.25" ] ],
+    [ "r5:2", "gnd3:GND", "green", [ "v-0.24", "h11.79" ] ],
+    [ "r6:1", "gnd3:GND", "green", [ "v0" ] ],
+    [ "r5:1", "btn6:1.r", "green", [ "v-0.94", "h-17.6" ] ],
+    [ "r6:2", "btn5:1.r", "green", [ "v1.24", "h11.94" ] ],
+    [ "r7:1", "btn7:1.r", "green", [ "v-1.82", "h-34.39" ] ],
+    [ "gnd4:GND", "r7:2", "black", [ "v0" ] ]
   ],
   "dependencies": {}
 }
