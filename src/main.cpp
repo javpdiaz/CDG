@@ -93,12 +93,14 @@ void setup() {
   tft.begin();
   tft.setRotation(1);
   
-  tft.fillRect(0, 0, 106, 120, ILI9341_BLUE);
+  /* tft.fillRect(0, 0, 106, 120, ILI9341_BLUE);
   tft.fillRect(106, 0, 107, 120, ILI9341_RED);
   tft.fillRect(213, 0, 107, 120, ILI9341_BLUE);
   tft.fillRect(0, 120, 106, 120, ILI9341_RED);
   tft.fillRect(106, 120, 107, 120, ILI9341_BLUE);
-  tft.fillRect(213, 120, 107, 120, ILI9341_RED);
+  tft.fillRect(213, 120, 107, 120, ILI9341_RED); */
+
+  tft.fillRect(0, 0, 320, 240, ILI9341_CYAN);
 
   //Cuadro izquierda arriba
   tft.setCursor(5, 5);
