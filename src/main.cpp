@@ -39,7 +39,7 @@ Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCK, TFT_R
 #define juez3_botton_izq 13
 #define juez3_botton_der 12
 
-#define reset_button 33
+#define reset_button 35
 
 //Contadores
 int BI_Cont = 0;
@@ -93,51 +93,75 @@ void setup() {
   tft.begin();
   tft.setRotation(1);
   
-  /* tft.fillRect(0, 0, 106, 120, ILI9341_BLUE);
-  tft.fillRect(106, 0, 107, 120, ILI9341_RED);
-  tft.fillRect(213, 0, 107, 120, ILI9341_BLUE);
-  tft.fillRect(0, 120, 106, 120, ILI9341_RED);
-  tft.fillRect(106, 120, 107, 120, ILI9341_BLUE);
-  tft.fillRect(213, 120, 107, 120, ILI9341_RED); */
+  tft.fillScreen(ILI9341_BLUE);
 
-  tft.fillRect(0, 0, 320, 240, ILI9341_CYAN);
+  //rectangulos de la columna izquierda
+  tft.fillRect(38, 13, 117, 50, ILI9341_CYAN);
+  tft.fillRect(38, 68, 117, 50, ILI9341_CYAN);
+  tft.fillRect(38, 123, 117, 50, ILI9341_CYAN);
+  tft.fillRect(38, 178, 117, 50, ILI9341_CYAN);
 
-  //Cuadro izquierda arriba
-  tft.setCursor(5, 5);
-  tft.setTextSize(4);
-  tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
-  tft.print("GAr");
+  //rectangulos de la columna derecha
+  tft.fillRect(165, 13, 117, 50, ILI9341_CYAN);
+  tft.fillRect(165, 68, 117, 50, ILI9341_CYAN);
+  tft.fillRect(165, 123, 117, 50, ILI9341_CYAN);
+  tft.fillRect(165, 178, 117, 50, ILI9341_CYAN);
 
-  //cuadro izquierda abajo
-  tft.setCursor(5, 125);
-  tft.setTextSize(4);
-  tft.setTextColor(ILI9341_YELLOW, ILI9341_RED);
-  tft.print("GAb");
+  //Ovalos de la columna izquierda
+  tft.fillRoundRect(19, 13, 65, 50, 20, ILI9341_WHITE);
+  tft.fillRoundRect(19, 68, 65, 50, 20, ILI9341_WHITE);
+  tft.fillRoundRect(19, 123, 65, 50, 20, ILI9341_WHITE);
+  tft.fillRoundRect(19, 178, 65, 50, 20, ILI9341_WHITE);
 
-  //Cuadro centro arriba
-  tft.setCursor(111, 5);
-  tft.setTextSize(4);
-  tft.setTextColor(ILI9341_YELLOW, ILI9341_RED);
+  //Ovalos de la columna derecha
+  tft.fillRoundRect(236, 13, 65, 50, 20, ILI9341_WHITE);
+  tft.fillRoundRect(236, 68, 65, 50, 20, ILI9341_WHITE);
+  tft.fillRoundRect(236, 123, 65, 50, 20, ILI9341_WHITE);
+  tft.fillRoundRect(236, 178, 65, 50, 20, ILI9341_WHITE);
+
+  //texto de la columna izquierda
+  tft.setCursor(34, 26);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
   tft.print("BI");
 
-  //cuadro centro abajo
-  tft.setCursor(111, 125);
-  tft.setTextSize(4);
-  tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
-  tft.print("BD");
-
-  //Cuadro derecha arriba
-  tft.setCursor(218, 5);
-  tft.setTextSize(4);
-  tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
+  tft.setCursor(34, 80);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
   tft.print("CI");
 
-  //cuadro derecha abajo
-  tft.setCursor(218, 125);
-  tft.setTextSize(4);
-  tft.setTextColor(ILI9341_YELLOW, ILI9341_RED);
+  tft.setCursor(34, 135);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
+  tft.print("GAr");
+
+  tft.setCursor(34, 190);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
+  tft.print("X");
+
+  //texto de la columna derecha
+  tft.setCursor(251, 26);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
+  tft.print("BD");
+
+  tft.setCursor(251, 80);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
   tft.print("CD");
-  
+
+  tft.setCursor(251, 135);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
+  tft.print("GAb");
+
+  tft.setCursor(251, 190);
+  tft.setTextSize(3);
+  tft.setTextColor(ILI9341_BLACK);
+  tft.print("X");
+
+
 }
 
 void loop() { 
@@ -193,40 +217,5 @@ void loop() {
     GAb_Count = 0;
   }
 
-  //cuadrado izquierda arriba
-  tft.setCursor(10, 60);
-  tft.setTextSize(5);
-  tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
-  tft.print(GAr_Cont);
-
-  //cuadro izquierda abajo
-  tft.setCursor(10, 180);
-  tft.setTextSize(5);
-  tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
-  tft.print(GAb_Count);
-
-  //Cuadro centro arriba
-  tft.setCursor(116, 60);
-  tft.setTextSize(5);
-  tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
-  tft.print(BI_Cont);
-
-  //cuadro centro abajo
-  tft.setCursor(116, 180);
-  tft.setTextSize(5);
-  tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
-  tft.print(BD_Cont);
-
-  //Cuadro derecha arriba
-  tft.setCursor(223, 60);
-  tft.setTextSize(5);
-  tft.setTextColor(ILI9341_BLACK, ILI9341_BLUE);
-  tft.print(CI_Cont);
-
-  //cuadro derecha abajo
-  tft.setCursor(223, 180);
-  tft.setTextSize(5);
-  tft.setTextColor(ILI9341_BLACK, ILI9341_RED);
-  tft.print(CD_Cont);
-
+  
 }
